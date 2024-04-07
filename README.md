@@ -1,1 +1,1 @@
-# Custom-Pizza-Palette-
+Pizza Palette is a customizable pizza ordering website
