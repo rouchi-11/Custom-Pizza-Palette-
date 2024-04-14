@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>sign up</title>
+
+
+        <link rel="stylesheet"
+  href="C:\Users\Piyusha\OneDrive\Desktop\MyWebsite.html\styles.css">
+  <!-- Link To CSS -->
+  <link rel="stylesheet" href="signupstyles.css">
+
+
+    </head>
+    <body>
+        <div class="main">
+            <div class="register">
+                <centre></centre>
+                <h2>PizzaPalette</h2>
+                <form id ="Register" method="post">
+                <label>Name: </label>
+           
+                <input type="text" name="name" id="name" placeholder="Enter your name">
+                <br><br>
+                <label>Email: </label>
+               
+                <input type="email" name="email" id="name" placeholder="Enter your email">
+                <br><br>
+                <label> Phone Number: </label>
+           
+                <input type="phone no" name="number" id="number" placeholder="Enter your phone number">
+                <br><br>
+           
+           
+                <a href="pizza.html" class="btn">Sign Up</a>
+                <!---input type="Sign up" value="Sign up" name="Sign up" id="Sign up"--->
+                <a href="pizza.html">
+                    
+                  </a>
+                 
+                <br>
+               
+            </form>
+        </centre>
+            </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    var signupForm = document.getElementById("signupForm");
+           
+                    signupForm.addEventListener("submit", function(event) {
+                        event.preventDefault();
+                        // Perform form validation if needed
+           
+                        // Submit the form data
+                        signupForm.submit();
+                       
+                        // Redirect to the main website after form submission
+                        setTimeout(function() {
+                            window.location.href = "pizza.html";
+                        }, 1000); // Redirect after 1 second (adjust as needed)
+                    });
+                });
+            </script>
+           
+        </body>      
+    </html>
+

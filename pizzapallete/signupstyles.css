@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+*::selection {
+    background: var(--main-color);
+    color: #fff;
+}
+
+
+:root {
+    --main-color: #ffb411;
+    --text-color: #1e1c2a;
+    --bg-color: #fff;
+
+
+    --big-font: 4rem;
+    --h2-font: 2.24rem;
+    --p-font: 0.9rem;
+}
+
+
+body.active {
+    --bg-color: #1e1c2a;
+    --text-color: #fff;
+}
+
+
+body {
+    color: var(--text-color);
+    background: var(--bg-color);
+}
+
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg-color);
+    padding: 18px 100px;
+    box-shadow: 0 0.5rem 50rem rgba(0, 0, 0, 0.1);
+}
+
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+
+.navbar {
+    display: flex;
+}
+
+
+.navbar a {
+    font-size: 1rem;
+    padding: 10px 20px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+
+.navbar a:hover {
+    color: var(--main-color);
+}
+
+
+#menu-icon {
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+}
+
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.register {
+    background-color: var(--bg-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+.register h2 {
+    color: var(--main-color);
+}
+
+
+.register label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+
+.register input[type="text"],
+.register input[type="email"],
+.register input[type="phone"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+.btn {
+    display: inline-block;
+    background-color: var(--main-color);
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+
+.btn:hover {
+    background-color: #d29d00;
+}
+
+
+/* Adjusting anchor style */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* Adjusting button inside anchor */
+a button {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: inherit;
+    color: var(--main-color);
+}
+
+
+a button:hover {
+    color: #d29d00;
+}
+
+
+
