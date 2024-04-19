@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="cartstyles.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Pizza Pallete</a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><span class="cart-total"><a href="index.html">Total: ₹349</a></span></li>
+            
+        </ul>
+    </header>
+
+    <main class="cart-container">
+        <h2>My Cart</h2>
+        <ul class="cart-items">
+            <!-- Cart items will be added here -->
+        </ul>
+        <div class="cart-total-container">
+            <h3>Total:</h3>
+            <span class="cart-total">₹349</span>
+        </div>
+        <button class="confirm-order">Confirm Order</button>
+        <div class="payment-methods">
+            <h3>Select Payment Method:</h3>
+            <input type="radio" id="credit-card" name="payment-method" value="Credit Card">
+            <label for="credit-card">Credit Card</label>
+            <br>
+            <input type="radio" id="debit-card" name="payment-method" value="Debit Card">
+            <label for="debit-card">Debit Card</label>
+            <br>
+            <input type="radio" id="net-banking" name="payment-method" value="Net Banking">
+            <label for="net-banking">Net Banking</label>
+            <br>
+            <input type="radio" id="cash-on-delivery" name="payment-method" value="Cash on Delivery">
+            <label for="cash-on-delivery">Cash on Delivery</label>
+        </div>
+        <p class="payment-message" style="display: none;"></p>
+    </main>
+
+    <script>
+        // JavaScript code for adding items to the cart
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        let cartTotal = 0;
+        addToCartButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                const price = parseFloat(button.previousElementSibling.textContent.replace('₹', ''));
+                cartTotal += price;
+                document.querySelector('.cart-total').textContent = `Total: ₹${cartTotal}`;
+
+                // Add the selected item to the cart
+                const itemName = button.parentElement.querySelector('h2').textContent;
+                const itemPrice = button.previousElementSibling.textContent;
+                const cartItem = document.createElement('li');
+                cartItem.innerHTML = `
+                    <span class="cart-item-name">${itemName}</span>
+                    <span class="cart-item-price">${itemPrice}</span>
+                `;
+                document.querySelector('.cart-items').appendChild(cartItem);
+            });
+        });
+
+        // JavaScript code for confirming the order
+        const confirmOrderButton = document.querySelector('.confirm-order');
+        confirmOrderButton.addEventListener('click', () => {
+            // Show confirmation message
+            alert('Your order has been confirmed!');
+
+           
+
+            // Display selected payment method
+            const paymentMethod = document.querySelector('input[name="payment-method"]:checked');
+            if (paymentMethod) {
+                const selectedMethod = paymentMethod.value;
+                const paymentMessage = document.querySelector('.payment-message');
+                paymentMessage.textContent = `Payment method selected: ${selectedMethod}`;
+                paymentMessage.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
